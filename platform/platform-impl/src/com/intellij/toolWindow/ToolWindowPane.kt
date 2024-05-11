@@ -171,7 +171,7 @@ class ToolWindowPane private constructor(
       horizontalSplitter.innerComponent = verticalSplitter
     }
     else {
-      verticalSplitter.innerComponent = null
+      verticalSplitter.innerComponent = horizontalSplitter
     }
     updateToolStripesVisibility(uiSettings)
 
@@ -487,7 +487,7 @@ class ToolWindowPane private constructor(
       }
       else {
         horizontalSplitter.innerComponent = null
-        verticalSplitter.innerComponent = null
+        verticalSplitter.innerComponent = horizontalSplitter
       }
       layeredPane.remove(if (isWideScreen) verticalSplitter else horizontalSplitter)
       layeredPane.add(if (isWideScreen) horizontalSplitter else verticalSplitter, DEFAULT_LAYER, -1)
