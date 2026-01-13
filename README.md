@@ -1,18 +1,11 @@
-[![official JetBrains project](http://jb.gg/badges/official.svg)](https://github.com/JetBrains/.github/blob/main/profile/README.md) [![IntelliJ IDEA build status](https://github.com/JetBrains/intellij-community/workflows/IntelliJ%20IDEA/badge.svg)](https://github.com/JetBrains/intellij-community/actions/workflows/IntelliJ_IDEA.yml) [![PyCharm build status](https://github.com/JetBrains/intellij-community/workflows/PyCharm/badge.svg)](https://github.com/JetBrains/intellij-community/actions/workflows/PyCharm.yml)
+# GitClient
 
-# IntelliJ Open Source Repository
+an attempt at building an open-source version of the short-lived [jetbrains git client](https://youtrack.jetbrains.com/issue/IJPL-72504/Make-git-client-a-standalone-app#focus=Comments-27-12868395.0-0)
 
-This repository is the open-source part of the JetBrains IDEs codebase.
-It also serves as the basis for [IntelliJ Platform development](https://www.jetbrains.com/opensource/idea). 
+> [!WARNING]
+> this project is very early in development. at the moment it's literally just intellij community edition with most of the plugins removed. stay tuned.....
 
-These instructions will help you build and run open source parts of IntelliJ Platform / IntelliJ IDEA / PyCharm.
-
-If you are new to the community and would like to contribute code or help others learn, see [CONTRIBUTING.md](https://github.com/JetBrains/intellij-community/blob/master/CONTRIBUTING.md) to get started.
-
-The following conventions will be used to refer to directories on your machine:
-* `<USER_HOME>` is your OS user's home directory.
-* `<IDEA_HOME>` is the root directory for the **IntelliJ source code**.
-
+# Original readme
 ___
 ## Getting the Source Code
 
