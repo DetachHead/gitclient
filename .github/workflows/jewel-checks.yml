@@ -155,14 +155,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        name: Check out repository
-
-      - uses: actions/checkout@v4
-        name: Checkout JetBrains/android submodule
         with:
-          repository: JetBrains/android
-          path: android
-          ref: master
+          submodules: true
+        name: Check out repository
 
       - name: Set up JBR 21
         uses: actions/setup-java@v4
