@@ -26,8 +26,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
-        with:
-          submodules: true
       - uses: ./.github/actions/build_ide
         with:
           os: linux
@@ -46,8 +44,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
-        with:
-          submodules: true
       - uses: ./.github/actions/build_ide
         with:
           os: windows
@@ -66,8 +62,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
-        with:
-          submodules: true
       - uses: ./.github/actions/build_ide
         with:
           os: mac

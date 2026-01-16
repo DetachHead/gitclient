@@ -155,8 +155,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: true
         name: Check out repository
 
       - name: Set up JBR 21
