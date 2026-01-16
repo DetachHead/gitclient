@@ -34,8 +34,8 @@ You can [clone this project](https://www.jetbrains.com/help/idea/manage-projects
 Alternatively, follow the steps below in a terminal:
 
    ```
-   git clone https://github.com/JetBrains/intellij-community.git --recurse-submodules
-   cd intellij-community
+   git clone https://github.com/detachhead/rebased.git --recurse-submodules
+   cd rebased
    ```
 
 > [!TIP]
@@ -44,7 +44,9 @@ Alternatively, follow the steps below in a terminal:
 > - Cloning in IntelliJ IDEA also supports creating shallow clone.
 
 > [!NOTE]
-IntelliJ IDEA requires additional Android modules from separate Git repositories, which is why `--recurse-submodules` is needed.
+> This project requires additional Android modules from separate Git repositories, which is why `--recurse-submodules` is needed. Ideally these should not be needed since Rebased
+> is not built with the Android plugin, but it seems too tightly integrated with the codebase to be able to easily remove it. So for now I've kept it as a git submodule instead of
+> relying on a script. This way, the project is always pinned to a version of the android repo that works with it.
 
 ---
 ## Building Rebased
