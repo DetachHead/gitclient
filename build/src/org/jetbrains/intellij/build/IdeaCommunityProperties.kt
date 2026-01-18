@@ -55,22 +55,20 @@ open class IdeaCommunityProperties(private val communityHomeDir: Path) : JetBrai
       "intellij.idea.community.customization",
     )
 
-    productLayout.bundledPluginModules = IDEA_BUNDLED_PLUGINS + sequenceOf(
-      "intellij.javaFX.community"
-    )
+    // TODO: to avoid upstream conflicts (and to make the code less confusing), we should probably
+    //  create a separate subclass of JetBrainsProductProperties for Rebased instead of modifying
+    //  the intellij community one
+    productLayout.bundledPluginModules = REBASED_BUNDLED_PLUGINS
 
     productLayout.prepareCustomPluginRepositoryForPublishedPlugins = false
     productLayout.buildAllCompatiblePlugins = true
     productLayout.pluginLayouts = CommunityRepositoryModules.COMMUNITY_REPOSITORY_PLUGINS + persistentListOf(
-      JavaPluginLayout.javaPlugin(),
-      CommunityRepositoryModules.androidPlugin(allPlatforms = true),
-      CommunityRepositoryModules.groovyPlugin(),
     )
 
     productLayout.skipUnresolvedContentModules = true
 
     mavenArtifacts.forIdeModules = true
-    mavenArtifacts.additionalModules += MAVEN_ARTIFACTS_ADDITIONAL_MODULES
+    mavenArtifacts.additionalModules += JewelMavenArtifacts.STANDALONE.keys
     mavenArtifacts.squashedModules += persistentListOf(
       "intellij.platform.util.base",
       "intellij.platform.util.base.multiplatform",
@@ -208,20 +206,12 @@ fun intellijCommunityBaseFragment(platformPrefix: String? = null): ProductModule
   module("intellij.platform.coverage")
   module("intellij.platform.coverage.agent")
   module("intellij.xml.xmlbeans")
-  module("intellij.platform.ide.newUiOnboarding")
-  module("intellij.platform.ide.newUsersOnboarding")
-  module("intellij.ide.startup.importSettings")
   module("intellij.platform.customization.min")
   module("intellij.idea.customization.base")
   module("intellij.idea.customization.backend")
-  module("intellij.platform.tips")
 
-  if (System.getProperty("idea.platform.prefix") == "AndroidStudio") {
-    module("intellij.idea.android.customization")
-  }
 
   moduleSet(CommunityModuleSets.ideCommon())
-  moduleSet(CommunityModuleSets.rdCommon())
 
   deprecatedInclude("intellij.idea.community.customization", "META-INF/community-customization.xml")
 }
