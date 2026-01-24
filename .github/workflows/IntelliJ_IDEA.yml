@@ -59,7 +59,7 @@ jobs:
           title: ${{ needs.get_version.outputs.version }}
           automatic_release_tag: ${{ needs.get_version.outputs.version }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: true
+          prerelease: false # ideally this would be true because rebased has not had a stable release yet, but i don't like that prereleases don't appear on the sidebar
           draft: true
           files: |
             **/*.tar.gz
